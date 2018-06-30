@@ -52,6 +52,15 @@ public class AdminMenu {
 		});
 		userPanel.add(deleteUserBtn);
 
+		JButton rechargeUserBtn = new JButton("用户充值");
+		rechargeUserBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RechargeUser.run(jf, username);
+			}
+		});
+		userPanel.add(rechargeUserBtn);
+
 		JPanel logoutPanel = new JPanel();
 		JButton logoutBtn = new JButton("返回");
 		logoutBtn.addActionListener(new ActionListener() {

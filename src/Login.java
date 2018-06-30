@@ -5,6 +5,7 @@ import java.awt.event.*;
 public class Login {
 
     public static void main(String[] args) {
+        UIStyle.systemStyle();
         run(new JFrame());
     }
 

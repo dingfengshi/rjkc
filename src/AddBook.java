@@ -7,6 +7,7 @@ import java.util.Map.*;
 public class AddBook {
 
     public static void main(String[] args) {
+        UIStyle.systemStyle();
         run(new JFrame(), null);
     }
 

@@ -6,6 +6,7 @@ import java.util.*;
 public class ReturnBook {
 
     public static void main(String[] args) {
+        UIStyle.systemStyle();
         run(new JFrame(), null);
     }
 

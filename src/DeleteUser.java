@@ -7,6 +7,7 @@ import java.util.Map.*;
 public class DeleteUser {
 
 	public static void main(String[] args) {
+		UIStyle.systemStyle();
 		run(new JFrame(), null);
 	}
 

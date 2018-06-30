@@ -1,16 +1,16 @@
-create table books(
-  bid int not null auto_increment unique,
-  bname varchar(20),
-  author varchar(20),
+create table books (
+  bid       int not null auto_increment unique,
+  bname     varchar(20),
+  author    varchar(20),
   publisher varchar(20),
-  price double,
-  quantity int
+  price     double,
+  quantity  int
 );
 
 create table user (
-  uid varchar(20) primary key ,
+  uid      varchar(20) primary key,
   password varchar(20) not null,
-  balance double
+  balance  double
 );
 
 create table borrow (
@@ -21,4 +21,18 @@ create table borrow (
   foreign key (bid) references books (bid)
 );
 
+/*管理员帐号*/
+insert into user values ('admin', '123456', 0.0);
 
+/*测试帐号*/
+insert into user values ('t', 't', 2);
+
+/*测试书本*/
+insert into books (bname, author, publisher, price, quantity) values ('龙族', '江南', '长江出版社', 25, 5);
+insert into books (bname, author, publisher, price, quantity) values ('龙族2', '江南', '长江出版社', 25, 5);
+insert into books (bname, author, publisher, price, quantity) values ('龙族3', '江南', '长江出版社', 25, 5);
+insert into books (bname, author, publisher, price, quantity) values ('龙族4', '江南', '长江出版社', 25, 5);
+insert into books (bname, author, publisher, price, quantity) values ('龙族5', '江南', '长江出版社', 25, 5);
+insert into books (bname, author, publisher, price, quantity) values ('C++', 'jack', '科技出版社', 40, 1);
+insert into books (bname, author, publisher, price, quantity) values ('JAVA', 'tom', '科技出版社', 50, 0);
+insert into books (bname, author, publisher, price, quantity) values ('Python', 'tom', '科技出版社', 80, 3);

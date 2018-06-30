@@ -13,6 +13,11 @@ public class UserMenu {
         jf.setTitle("用户菜单");
         jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+        JPanel balancePanel = new JPanel();
+        User user = (new Mysqlutil()).selectUserById(username);
+	JLabel balanceLabel = new JLabel("余额:" + user.getBalance());
+	balancePanel.add(balanceLabel);
+
         JPanel bookPanel = new JPanel();
         JButton borrowBookBtn = new JButton("借阅图书");
         borrowBookBtn.addActionListener(new ActionListener() {
@@ -46,6 +51,7 @@ public class UserMenu {
         logoutPanel.add(logoutBtn);
 
         Box vBox = Box.createVerticalBox();
+        vBox.add(balancePanel);
         vBox.add(bookPanel);
         vBox.add(logoutPanel);
 

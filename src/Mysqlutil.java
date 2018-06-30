@@ -203,7 +203,7 @@ public class Mysqlutil {
         return null;
     }
 
-    private User selectUserById(String uid) {
+    public User selectUserById(String uid) {
         Connection conn = getConnection();
         String sql = "select * from user where uid = ? ";
         try {

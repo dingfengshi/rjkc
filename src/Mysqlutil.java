@@ -203,7 +203,7 @@ public class Mysqlutil {
         return null;
     }
 
-    private User selectUserBlance(String uid) {
+    private User selectUserById(String uid) {
         Connection conn = getConnection();
         String sql = "select * from user where uid = ? ";
         try {
@@ -251,7 +251,7 @@ public class Mysqlutil {
             }
 
             /*检查用户余额*/
-            User user = selectUserBlance(record.getUid());
+            User user = selectUserById(record.getUid());
             if (user.getBalance() < 0) {
                 return -3;
             }
@@ -296,7 +296,7 @@ public class Mysqlutil {
                 return 0;
             }
 
-            User user = selectUserBlance(uid);
+            User user = selectUserById(uid);
             Books book = selectBookById(bid);
 
             /*书籍数量+1*/
@@ -415,7 +415,7 @@ public class Mysqlutil {
             Connection conn = getConnection();
             String sql = "update user set balance=? where uid= ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
-            User user = selectUserBlance(uid);
+            User user = selectUserById(uid);
             stmt.setDouble(1, user.getBalance() + value);
             stmt.setString(2, uid);
             return stmt.executeUpdate();

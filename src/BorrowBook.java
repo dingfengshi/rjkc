@@ -1,5 +1,3 @@
-import sun.security.jca.JCAUtil;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;

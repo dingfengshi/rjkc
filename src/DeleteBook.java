@@ -152,7 +152,7 @@ public class DeleteBook {
 
     private static void refresh(JFrame jf) {
         String stext = searchText.getText();
-        bookList = (new Mysqlutil()).selectBookByName(stext);
+        bookList = (new Mysqlutil()).selectBookByAll(stext);
         //page = 0;
         showResult();
         jf.pack();

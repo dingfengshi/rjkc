@@ -192,7 +192,8 @@ public class BorrowBook {
 
     private static void refresh(JFrame jf) {
         String stext = searchText.getText();
-        bookList = (new Mysqlutil()).selectBookByName(stext);
+	System.out.println(stext);
+        bookList = (new Mysqlutil()).selectBookByAll(stext);
         //page = 0;
         showResult();
         jf.pack();

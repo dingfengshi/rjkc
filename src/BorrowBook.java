@@ -17,7 +17,7 @@ public class BorrowBook {
         Box vBox = Box.createVerticalBox();
 
         JPanel searchPanel = new JPanel();
-        searchPanel.add(new JLabel("书名"));
+        searchPanel.add(new JLabel("书号/书名/作者/出版社："));
         searchText = new JTextField(10);
         searchPanel.add(searchText);
         JButton searchBtn = new JButton("查询");

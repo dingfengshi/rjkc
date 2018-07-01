@@ -49,7 +49,6 @@ public class DeleteUser {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				AdminMenu.run(jf, username);
-				jf.pack();
 			}
 		});
 		submitPanel.add(submitBtn);

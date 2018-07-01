@@ -157,7 +157,6 @@ public class BorrowBook {
             @Override
             public void actionPerformed(ActionEvent e) {
                 UserMenu.run(jf, username);
-                jf.pack();
             }
         });
         submitPanel.add(returnBtn);

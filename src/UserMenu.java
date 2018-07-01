@@ -24,7 +24,6 @@ public class UserMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 BorrowBook.run(jf, username);
-                jf.pack();
             }
         });
         bookPanel.add(borrowBookBtn);
@@ -34,7 +33,6 @@ public class UserMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ReturnBook.run(jf, username);
-                jf.pack();
             }
         });
         bookPanel.add(returnBookBtn);
@@ -45,7 +43,6 @@ public class UserMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Login.run(jf);
-                jf.pack();
             }
         });
         logoutPanel.add(logoutBtn);

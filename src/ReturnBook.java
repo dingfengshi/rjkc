@@ -11,13 +11,13 @@ public class ReturnBook {
     }
 
     public static void run(JFrame jf, String username) {
-        jf.setTitle("归还图书");
+        jf.setTitle("已借图书");
         jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         Box vBox = Box.createVerticalBox();
 
         JPanel searchPanel = new JPanel();
-        JButton searchBtn = new JButton("查询已借图书");
+        JButton searchBtn = new JButton("查询");
         searchBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -127,6 +127,7 @@ public class ReturnBook {
         jf.setLocationRelativeTo(null);
         jf.setVisible(true);
         jf.pack();
+        refresh(jf, username);
     }
 
     private static void showResult() {

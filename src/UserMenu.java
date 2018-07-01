@@ -28,7 +28,7 @@ public class UserMenu {
         });
         bookPanel.add(borrowBookBtn);
 
-        JButton returnBookBtn = new JButton("归还图书");
+        JButton returnBookBtn = new JButton("已借图书（归还）");
         returnBookBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

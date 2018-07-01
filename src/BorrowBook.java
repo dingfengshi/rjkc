@@ -85,21 +85,21 @@ public class BorrowBook {
                 boolean has_fail = false;
                 boolean has_succeed = false;
                 Mysqlutil utill = new Mysqlutil();
-                if (result.length == 0) {
+
+                /*检查借阅数量是否过多*/
+                ArrayList<Record> records = utill.selectRecordByUid(username);
+                int selectedcount = 0;
+                for (JCheckBox r : result) {
+                    if (r.isSelected()) {
+                        selectedcount++;
+                    }
+                }
+                if (selectedcount == 0) {
                     JOptionPane.showMessageDialog(null, "请选择要借的书籍！", "所选为空", JOptionPane.ERROR_MESSAGE);
                     refresh(jf);
                     return;
                 }
-
-                /*检查借阅数量是否过多*/
-                ArrayList<Record> records = utill.selectRecordByUid(username);
-                int seletedcount = 0;
-                for (JCheckBox r : result) {
-                    if (r.isSelected()) {
-                        seletedcount++;
-                    }
-                }
-                if (records.size() + seletedcount > utill.bookLimit) {
+                if (records.size() + selectedcount > utill.bookLimit) {
                     JOptionPane.showMessageDialog(null, "借阅书的数量超过限制", "借阅失败", JOptionPane.WARNING_MESSAGE);
                     refresh(jf);
                     return;
@@ -167,6 +167,7 @@ public class BorrowBook {
         jf.setLocationRelativeTo(null);
         jf.setVisible(true);
         jf.pack();
+        refresh(jf);
     }
 
     private static void showResult() {

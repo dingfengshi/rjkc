@@ -17,7 +17,7 @@ public class BorrowBook {
         Box vBox = Box.createVerticalBox();
 
         JPanel searchPanel = new JPanel();
-        searchPanel.add(new JLabel("书号/书名/作者/出版社："));
+        searchPanel.add(new JLabel("关键字"));
         searchText = new JTextField(10);
         searchPanel.add(searchText);
         JButton searchBtn = new JButton("查询");
@@ -192,7 +192,7 @@ public class BorrowBook {
     private static void refresh(JFrame jf) {
         String stext = searchText.getText();
         bookList = (new Mysqlutil()).selectBookByName(stext);
-        page = 0;
+        //page = 0;
         showResult();
         jf.pack();
     }

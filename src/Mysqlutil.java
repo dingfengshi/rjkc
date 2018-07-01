@@ -85,6 +85,11 @@ public class Mysqlutil {
      *
      * @return ArrayList<Books>
      */
+
+    public ArrayList<Books> selectBookByAll(String text) {
+        return selectBook("select * from books where bname LIKE '%" + text + "%' or bid LIKE '%" + text + "%' or author LIKE '%" + text + "%' or publisher LIKE '%" + text + "%'");
+    }
+
     public ArrayList<Books> selectBookByName(String name) {
         return selectBook("select * from books where bname LIKE '%" + name + "%'");
     }

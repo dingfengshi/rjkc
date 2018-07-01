@@ -25,7 +25,7 @@ public class BorrowBook {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String stext = searchText.getText();
-                bookList = (new Mysqlutil()).selectBookByName(stext);
+                bookList = (new Mysqlutil()).selectBookByAll(stext);
                 page = 0;
                 showResult();
                 jf.pack();

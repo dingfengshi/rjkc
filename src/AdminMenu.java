@@ -78,8 +78,8 @@ public class AdminMenu {
 
 		jf.setContentPane(vBox);
 
-		jf.pack();
 		jf.setLocationRelativeTo(null);
 		jf.setVisible(true);
+		jf.pack();
 	}
 }

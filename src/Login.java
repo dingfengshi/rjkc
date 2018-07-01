@@ -53,9 +53,9 @@ public class Login {
 
         jf.setContentPane(vBox);
 
-        jf.pack();
         jf.setLocationRelativeTo(null);
         jf.setVisible(true);
+        jf.pack();
     }
 
     private static JTextField userField;

@@ -40,7 +40,7 @@ public class RechargeUser {
 				// System.out.println(id);
 
 				if ((new Mysqlutil()).recharge(id, money)>0){
-					JOptionPane.showMessageDialog(null, "您已经成功为" + username + "充值" + money + "！", "充值成功", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "您已经成功为" + id + "充值" + money + "！", "充值成功", JOptionPane.INFORMATION_MESSAGE);
 				}else {
 					JOptionPane.showMessageDialog(null, "充值失败！", "充值失败", JOptionPane.ERROR_MESSAGE);
 				}

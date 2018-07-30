@@ -412,6 +412,10 @@ public class Mysqlutil {
 
     public int recharge(String uid, double value) {
         try {
+            /*充值限制*/
+            if (value <= 0 || value > 100000) {
+                return 0;
+            }
             Connection conn = getConnection();
             String sql = "update user set balance=? where uid= ?";
             PreparedStatement stmt = conn.prepareStatement(sql);

@@ -1,0 +1,24 @@
+create table books(
+  bid int not null auto_increment unique,
+  bname varchar(20),
+  author varchar(20),
+  publisher varchar(20),
+  price double,
+  quantity int
+);
+
+create table user (
+  uid varchar(20) primary key ,
+  password varchar(20) not null,
+  balance double
+);
+
+create table borrow (
+  uid  varchar(20),
+  bid  int,
+  data date,
+  foreign key (uid) references user (uid),
+  foreign key (bid) references books (bid)
+);
+
+

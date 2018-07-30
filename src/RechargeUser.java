@@ -28,7 +28,7 @@ public class RechargeUser {
 		}
 
 		JPanel submitPanel = new JPanel();
-		JButton submitBtn = new JButton("删除");
+		JButton submitBtn = new JButton("充值");
 		submitBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
